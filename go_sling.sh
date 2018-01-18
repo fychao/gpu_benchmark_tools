@@ -1,13 +1,12 @@
 #!/bin/sh
-CMD_GIT=/usr/bin/git
-$CMD_GIT clone --recursive https://github.com/google/sling.git
+git clone --recursive https://github.com/google/sling.git
 pip install -U protobuf==3.4.0
 cd sling/
 bazel build -c opt sling/nlp/parser sling/nlp/parser/tools:all
-bash sling/nlp/parser/tools/build-commons.sh
 curl -o ./conll-2003-sempar.tar.gz http://www.jbox.dk/sling/conll-2003-sempar.tar.gz
-tar -xvf ../conll-2003-sempar.tar.gz -C ./ --no-same-owner 
-curl -o local/embeddings/word2vec-32-embeddings.bin http://www.jbox.dk/sling/word2vec-32-embeddings.bin
+mkdir -p ./local/embeddings
+tar -xvf ./conll-2003-sempar.tar.gz -C ./ --no-same-owner 
+curl -o ./local/embeddings/word2vec-32-embeddings.bin http://www.jbox.dk/sling/word2vec-32-embeddings.bin
 ./sling/nlp/parser/tools/train.sh \
   --commons=local/conll2003/commons \
   --train=local/conll2003/eng.train.zip \

@@ -4,7 +4,8 @@ this is collection of gpu benchmark tools
 <!-- MarkdownTOC -->
 
 - plan
-	- I. DeepBench
+	- I. Sling
+	- II. DeepBench
 
 <!-- /MarkdownTOC -->
 

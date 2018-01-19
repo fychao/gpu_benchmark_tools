@@ -11,7 +11,13 @@ this is collection of gpu benchmark tools
 
 ## plan
 
-### I. DeepBench
+### I. Sling
+
+https://github.com/google/sling
+
+* for provisional tensorflow training
+
+### II. DeepBench
 
 https://github.com/baidu-research/DeepBench
 

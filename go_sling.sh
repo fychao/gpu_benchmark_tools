@@ -17,6 +17,9 @@ if [ ! -f ./local/embeddings/word2vec-32-embeddings.bin ]; then
     curl -o ./local/embeddings/word2vec-32-embeddings.bin http://www.jbox.dk/sling/word2vec-32-embeddings.bin
 fi
 
+echo "Training ..."
+START_TIME=$SECONDS
+
 ./sling/nlp/parser/tools/train.sh \
   --commons=local/conll2003/commons \
   --train=local/conll2003/eng.train.zip \
@@ -25,3 +28,6 @@ fi
   --report_every=5000 \
   --train_steps=10000 \
   --output=/tmp/sempar-conll
+
+ELAPSED_TIME=$(($SECONDS - $START_TIME))
+echo "Done: $ELAPSED_TIME seconds elapsed."

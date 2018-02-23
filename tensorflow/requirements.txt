@@ -1,8 +1,8 @@
 absl-py==0.1.10
 alabaster==0.7.10
-anaconda-client
-anaconda-navigator
-anaconda-project
+#anaconda-client
+#anaconda-navigator
+#anaconda-project
 asn1crypto==0.22.0
 astor==0.6.2
 astroid==1.5.3
@@ -24,9 +24,9 @@ click==6.7
 cloudpickle==0.4.0
 clyent==1.2.2
 colorama==0.3.9
-conda
-conda-build
-conda-verify
+#conda
+#conda-build
+#conda-verify
 contextlib2==0.5.5
 cryptography==2.0.3
 cycler==0.10.0
@@ -83,7 +83,7 @@ mistune==0.7.4
 mpmath==0.19
 msgpack-python==0.4.8
 multipledispatch==0.4.9
-navigator-updater==0.1.0
+#navigator-updater==0.1.0
 nbconvert==5.3.1
 nbformat==4.4.0
 networkx==2.0

@@ -20,11 +20,11 @@ echo "Benchmarking GPU: 1 ... CUDA_VISIBLE_DEVICES=$CUDA_VISIBLE_DEVICES"
 START_TIME=$SECONDS
 if [ "$VERBOSE_MODE" = true ] ; then
     echo "!! VERBOSE MODE leave no log.."
-    python $DIR/tf_cnn_benchmarks.py --num_gpus=$NUM_GPU $TF_FLAGS
+    time python $DIR/tf_cnn_benchmarks.py --num_gpus=$NUM_GPU $TF_FLAGS
 else
     OUT_FILE="tf_cnn_benchmarks_gpu_$NUM_GPU.log"
     echo "Log file: $OUT_FILE"
-    python $DIR/tf_cnn_benchmarks.py --num_gpus=$NUM_GPU $TF_FLAGS > "$OUT_FILE" 2>&1
+    time python $DIR/tf_cnn_benchmarks.py --num_gpus=$NUM_GPU $TF_FLAGS > "$OUT_FILE" 2>&1
 fi
 ELAPSED_TIME=$(($SECONDS - $START_TIME))
 echo "Done: $ELAPSED_TIME seconds elapsed."
@@ -37,11 +37,11 @@ START_TIME=$SECONDS
 
 if [ "$VERBOSE_MODE" = true ] ; then
     echo "!! VERBOSE MODE leave no log.."
-    python $DIR/tf_cnn_benchmarks.py --num_gpus=$NUM_GPU $TF_FLAGS
+    time python $DIR/tf_cnn_benchmarks.py --num_gpus=$NUM_GPU $TF_FLAGS
 else
     OUT_FILE="tf_cnn_benchmarks_gpu_$NUM_GPU.log"
     echo "Log file: $OUT_FILE"
-    python $DIR/tf_cnn_benchmarks.py --num_gpus=$NUM_GPU $TF_FLAGS > "$OUT_FILE" 2>&1
+    time python $DIR/tf_cnn_benchmarks.py --num_gpus=$NUM_GPU $TF_FLAGS > "$OUT_FILE" 2>&1
 fi
 
 ELAPSED_TIME=$(($SECONDS - $START_TIME))
